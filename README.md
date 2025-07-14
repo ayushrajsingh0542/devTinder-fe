@@ -7,3 +7,6 @@
 - react-router-dom implemented
 - created outlet
 - created footer
+- connected with backend using axios
+- implemented cors withCredentials true
+- setup redux store with user info
