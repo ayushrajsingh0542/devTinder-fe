@@ -1,13 +1,37 @@
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { BASE_URL } from "../utils/constants";
+import axios from "axios";
+import { removeUser } from "../utils/userSlice";
+import TypingEffect from "../utils/TypingEffect";
 
 function Navbar() {
   const user = useSelector((store) => store.user);
+  const navigate=useNavigate();
+  const dispatch=useDispatch();
+  const handleLogout=async()=>{
+       try{
+
+        await axios.post(BASE_URL+"/logout",{},{withCredentials:true})
+        dispatch(removeUser())//removeUser reducer needs nothing
+        navigate("/login");
+
+       }catch(err)
+       {
+        console.log(err);
+       }
+  }
   return (
-    <div className="navbar bg-error-content shadow-md">
-      <div className="flex-1 ">
-        <Link to="/" className="btn btn-ghost text-xl">DevTinder</Link>
-      </div>
+    <div className="navbar bg-error-content shadow-lg justify-between">
+      <div className="flex items-center gap-2 ml-2 text-white">
+  <Link to="/" className="text-2xl font-bold hover:text-pink-200">
+    DevTinder
+  </Link>
+  <span className="text-pink-400">|</span>
+  <TypingEffect />
+</div>
+
+<div className="flex items-center gap-4 mr-4">
       <label className="swap swap-rotate">
         {/* this hidden checkbox controls the state */}
         <input type="checkbox" />
@@ -58,12 +82,13 @@ function Navbar() {
               <a>Settings</a>
             </li>
             <li>
-              <a>Logout</a>
+              <a onClick={handleLogout}>Logout</a>
             </li>
             
           </ul>
         </div>
       </div>}
+    </div>
     </div>
   );
 }

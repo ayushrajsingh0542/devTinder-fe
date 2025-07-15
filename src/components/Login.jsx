@@ -9,6 +9,7 @@ function Login() {
 
     const [emailId,setEmailId]=useState("");
     const [password,setPassword]=useState("");
+    const [errorMsg,setErrorMsg]=useState("");
     const dispatch=useDispatch();
     const navigate=useNavigate();
 
@@ -25,6 +26,7 @@ function Login() {
       catch(err)
       {
         console.log(err);
+        setErrorMsg("ERROR : "+err?.response?.data||'Something went wrong')
       }
     }
 
@@ -61,7 +63,7 @@ function Login() {
           </label>
 
           {/* Password */}
-          <label className="input input-bordered flex items-center gap-2 mb-6 rounded-lg">
+          <label className="input input-bordered flex items-center gap-2  rounded-lg">
             <svg
               className="h-5 w-5 text-gray-500"
               xmlns="http://www.w3.org/2000/svg"
@@ -88,6 +90,8 @@ function Login() {
               className="grow"
             />
           </label>
+          <p className="text-red-500 -mt-0.5 mb-5 ml-1">{errorMsg}</p>
+          
 
           {/* Login Button */}
           <div className="flex justify-center">
