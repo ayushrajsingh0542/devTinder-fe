@@ -4,7 +4,7 @@ import { BASE_URL } from "../utils/constants"
 import { useDispatch, useSelector } from "react-redux"
 import { addConnections } from "../utils/connectionSlice"
 
-const Connections = () => {
+const Connectionss = () => {
 
     const dispatch=useDispatch();
     const connections=useSelector((store)=>store.connections);
@@ -33,6 +33,8 @@ fetchConnections();
         <h1 className="text-bold text-3xl">WOW ! WHY SO LONELY :( 🥲</h1>
     </div>
 
+    console.log(connections[0].gender)
+
   return (
     <div className=" text-center my-10">
         <h1 className="text-bold text-4xl ">Connections 🤝</h1>
@@ -59,4 +61,4 @@ fetchConnections();
   )
 }
 
-export default Connections
+export default Connectionss

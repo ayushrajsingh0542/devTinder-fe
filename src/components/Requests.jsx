@@ -48,8 +48,10 @@ const Requests = () => {
         return <div className="flex justify-center my-10">
         <h1 className="text-bold text-3xl">WOW ! WHY SO LONELY :( 🥲</h1>
     </div>
+    
 
   return (
+    
     <div className="">
         <h1 className="text-bold text-center text-4xl my-10 ">Yay ! Requests 🤩</h1>
 

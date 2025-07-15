@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 
 function UserCard({ user }) {
   const { firstName, lastName, age, about, photoUrl, gender } = user;
+  
 
   const location=useLocation();
   const isProfile=location.pathname==='/profile'

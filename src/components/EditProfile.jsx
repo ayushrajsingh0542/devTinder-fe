@@ -8,8 +8,8 @@ import UserCard from "./UserCard";
 const EditProfile = ({user}) => {
   const [lastName, setLastName] = useState(user?.lastName||"");
   const [firstName, setFirstName] = useState(user.firstName);
-  const [age, setAge] = useState(user?.age||"");
-  const [gender, setGender] = useState(user?.gender||"");
+  const [age, setAge] = useState(user?.age||18);
+  const [gender, setGender] = useState(user.gender);
   const [about, setAbout] = useState(user?.about||"");
   const [photoUrl, setPhotoUrl] = useState(user?.photoUrl||"");
   const [showToast,setShowToast]=useState(false);
@@ -96,7 +96,7 @@ const EditProfile = ({user}) => {
             {/* Age */}
             <label className="input input-bordered flex items-center gap-2 mb-4 rounded-lg">
               <input
-                type="Number"
+                type="number"
                 placeholder="Age"
                 required
                 className="grow"
