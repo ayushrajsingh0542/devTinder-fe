@@ -24,7 +24,7 @@ function Navbar() {
   return (
     <div className="navbar bg-error-content shadow-lg justify-between">
       <div className="flex items-center gap-2 ml-2 text-white">
-  <Link to="/" className="text-2xl font-bold hover:text-pink-200">
+  <Link to="/feed" className="text-2xl font-bold hover:text-pink-200">
     DevTinder
   </Link>
   <span className="text-pink-400">|</span>
@@ -79,7 +79,7 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <a>Settings</a>
+              <Link to="/connections">Connections</Link>
             </li>
             <li>
               <a onClick={handleLogout}>Logout</a>

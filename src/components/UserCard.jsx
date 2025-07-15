@@ -9,11 +9,11 @@ function UserCard({ user }) {
 
   return (
     <div className="card bg-gray-900 w-96 max-h-[600px] border border-pink-500/40 overflow-hidden shadow-[0_0_15px_#ec4899] rounded-xl">
-      <figure>
+      <figure >
         <img
           src={photoUrl}
           alt="User"
-          className="w-full h-64 object-contain"
+          className="w-full h-64 object-contain mt-2"
         />
       </figure>
 
