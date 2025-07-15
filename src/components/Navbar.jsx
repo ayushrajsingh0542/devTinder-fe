@@ -1,11 +1,12 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const user = useSelector((store) => store.user);
   return (
     <div className="navbar bg-error-content shadow-md">
       <div className="flex-1 ">
-        <a className="btn btn-ghost text-xl">DevTinder</a>
+        <Link to="/" className="btn btn-ghost text-xl">DevTinder</Link>
       </div>
       <label className="swap swap-rotate">
         {/* this hidden checkbox controls the state */}
@@ -48,10 +49,10 @@ function Navbar() {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-300 rounded-box z-1 mt-5 w-52 p-2 shadow">
             <li>
-              <a className="justify-between">
+              <Link to="/profile" className="justify-between">
                 Profile
                 
-              </a>
+              </Link>
             </li>
             <li>
               <a>Settings</a>
