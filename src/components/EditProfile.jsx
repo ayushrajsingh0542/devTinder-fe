@@ -6,9 +6,9 @@ import { addUser } from "../utils/userSlice";
 import UserCard from "./UserCard";
 
 const EditProfile = ({user}) => {
-  const [lastName, setLastName] = useState("");
+  const [lastName, setLastName] = useState(user?.lastName||"");
   const [firstName, setFirstName] = useState(user.firstName);
-  const [age, setAge] = useState(user?.lastName||"");
+  const [age, setAge] = useState(user?.age||"");
   const [gender, setGender] = useState(user?.gender||"");
   const [about, setAbout] = useState(user?.about||"");
   const [photoUrl, setPhotoUrl] = useState(user?.photoUrl||"");
@@ -122,16 +122,10 @@ const EditProfile = ({user}) => {
             </label>
 
             {/* About */}
-            <label className="input input-bordered flex items-center gap-2 mb-4 rounded-lg">
-              <input
-                type="text"
-                placeholder="About You"
-                required
-                className="grow"
-                value={about}
-                onChange={(e) => setAbout(e.target.value)}
-              />
-            </label>
+             <textarea className="textarea rounded-lg grow" placeholder="Bio" value={about}
+                onChange={(e) => setAbout(e.target.value)}></textarea>
+
+           
 
             {errorMsg && <p className="text-red-600">{errorMsg}</p>}
 

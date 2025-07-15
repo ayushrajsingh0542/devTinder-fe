@@ -13,7 +13,7 @@ const Connections = () => {
        try{
 
         const res=await axios.get(BASE_URL+"/user/connections",{withCredentials:true})
-        console.log(res?.data?.data);
+        
         dispatch(addConnections(res?.data?.data))
        }catch(err)
        {
@@ -39,11 +39,11 @@ fetchConnections();
 
         {connections.map((connection) => {
 
-         const {firstName,lastName,photoUrl,age,gender,about}=connection
+         const {firstName,lastName,photoUrl,age,gender,about,_id}=connection
 
   return (
-    <div className="m-4 p-4 border border-rounded-lg bg-base-300 flex rounded-lg ">
-        <div><img alt="photo" className="w-20 h-20 rounded-full" src={photoUrl} /></div>
+    <div key={_id} className="m-4 p-4 border border-rounded-lg bg-base-300 flex rounded-lg ">
+        <div><img alt="photo" className="w-20 h-20 rounded-full object-cover" src={photoUrl} /></div>
         <div className="text-left mx-4"><h2 className="font-bold text-xl">{firstName+" "+lastName}</h2>
         <p>{age+" , "+gender}</p>
         <p className="break-words">{about}</p>
