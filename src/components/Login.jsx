@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/constants";
 
 function Login() {
@@ -93,10 +93,18 @@ function Login() {
           <p className="text-red-500 -mt-0.5 mb-5 ml-1">{errorMsg}</p>
           
 
-          {/* Login Button */}
-          <div className="flex justify-center">
+          {/* Login & Signup Button */}
+          <div className="justify-center">
             <button className="btn btn-neutral w-full rounded-lg bg-blue-800 hover:bg-blue-900" onClick={handleLoginClick}>Login</button>
+            <Link to="/signup" className=""> <button className="btn btn-neutral rounded-lg bg-blue-800 hover:bg-blue-900 w-full mt-3">Signup</button></Link>
           </div>
+
+
+          
+          
+
+
+
         </div>
       </div>
     </div>
