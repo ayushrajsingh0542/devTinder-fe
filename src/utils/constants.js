@@ -1,1 +1,1 @@
-export const BASE_URL="http://localhost:3030"
+export const BASE_URL="/api"//because of aws and nginx earlier was http://localhost:3030
