@@ -28,7 +28,9 @@ function Navbar() {
     DevTinder
   </Link>
   <span className="text-pink-400">|</span>
-  <TypingEffect />
+  <div className="hidden md:block">
+      <TypingEffect />
+    </div>
 </div>
 
 <div className="flex items-center gap-4 mr-4">
