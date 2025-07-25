@@ -8,6 +8,7 @@ import Feed from "./components/Feed";
 import Connectionss from "./components/Connections";
 import Requests from "./components/Requests";
 import SignUp from "./components/SignUp";
+import Premium from "./components/Premium";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
        <Route path="/profile" element={<Profile />} />
        <Route path="/connections" element={<Connectionss />} />
        <Route path="/requests" element={<Requests />} />
+       <Route path="/premium" element={<Premium />} />
       </Route>
     </Routes>
     </BrowserRouter>
