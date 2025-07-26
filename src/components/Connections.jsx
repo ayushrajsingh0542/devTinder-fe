@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import { BASE_URL } from "../utils/constants"
 import { useDispatch, useSelector } from "react-redux"
 import { addConnections } from "../utils/connectionSlice"
+import { Link } from "react-router-dom"
 
 const Connectionss = () => {
 
@@ -49,7 +50,11 @@ fetchConnections();
         <div className="text-left mx-4"><h2 className="font-bold text-xl">{firstName+" "+lastName}</h2>
         <p>{age+" , "+gender}</p>
         <p className="break-words">{about}</p>
+         <Link to={"/chat/" + _id}>
+              <button className="bg-pink-500 btn rounded-lg shadow-sm shadow-pink-400 mt-3 ">Chat</button>
+            </Link>
         </div>
+       
         
         
     </div>
